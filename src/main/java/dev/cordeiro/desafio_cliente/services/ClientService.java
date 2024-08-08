@@ -34,4 +34,11 @@ public class ClientService {
 
 
     }
+
+    public Long insert(ClientDto clientDto) {
+        Client client = new Client(clientDto);
+        client = clientRepository.save(client);
+
+        return client.getId();
+    }
 }
